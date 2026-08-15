@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In & Register | CRAFTLY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body>
+
+    <div class="container" id="container">
+        
+        <div class="form-container sign-up">
+            <form id="registerForm">
+                <h1>Join CRAFTLY</h1>
+                <div class="social-icons">
+                    <button type="button" class="icon-btn" id="googleRegister"><i class="fa-brands fa-google"></i></button>
+                </div>
+                <span>or use your email for registration</span>
+                
+                <input type="text" id="username" placeholder="Name">
+                <input type="email" id="email" placeholder="Email">
+                <input type="password" id="password" placeholder="Password">
+                
+                <button type="submit" class="btn-primary">Sign Up</button>
+            </form>
+        </div>
+
+        <div class="form-container sign-in">
+            <form id="loginForm">
+                <h1>Welcome Back!</h1>
+                <div class="social-icons">
+                    <button type="button" class="icon-btn" id="googleLogin"><i class="fa-brands fa-google"></i></button>
+                </div>
+                <span>or use your email account</span>
+                
+                <input type="email" id="emailLogin" placeholder="Email">
+                <input type="password" id="passwordLogin" placeholder="Password">
+                
+                <a href="#" class="forgot-pass">Forgot Password?</a>
+                <button type="submit" class="btn-primary">Sign In</button>
+            </form>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <img src="assets/img/logo-kiri.png" alt="Craftly Logo" class="logo-small logo-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to access your craft business dashboard.</p>
+                    <button class="btn-ghost" id="loginBtnTrigger">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <img src="assets/img/logo-kanan.png" alt="Craftly Logo" class="logo-small logo-right">
+                    <h1>New Here?</h1>
+                    <p>Sign up and discover a world of opportunities for your local craft.</p>
+                    <button class="btn-ghost" id="registerBtnTrigger">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/auth.js"></script>
+
+</body>
+</html>

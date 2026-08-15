@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Export | CRAFTLY</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+</head>
+<body class="bg-[#f8f9fa] font-sans antialiased text-brand-birutua overflow-hidden flex h-screen selection:bg-brand-coklat selection:text-white">
+
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r border-gray-100 h-full shadow-[4px_0_24px_rgba(0,0,0,0.02)] z-20 shrink-0">
+        <div class="p-6 flex items-center justify-center border-b border-gray-50">
+            <a href="dashboard.html" class="block transform transition-transform hover:scale-105">
+                <img src="assets/img/Logo.png" alt="Craftly" class="h-24 object-contain">
+            </a>
+        </div>
+        <nav class="flex-1 px-6 py-8 flex flex-col gap-2 overflow-y-auto custom-scrollbar">
+            <a href="dashboard.html" class="flex items-center gap-4 px-4 py-3 bg-brand-birutua text-brand-cream rounded-xl font-semibold shadow-md transition-all">
+                <i class="fa-solid fa-house w-5 text-center"></i> Home
+            </a>
+            <a href="market.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:text-brand-birutua hover:bg-brand-cream/50 rounded-xl font-medium transition-all">
+                <i class="fa-solid fa-shop w-5 text-center"></i> Market
+            </a>
+            <a href="ai-assistant.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:text-brand-birutua hover:bg-brand-cream/50 rounded-xl font-medium transition-all">
+                <i class="fa-solid fa-robot w-5 text-center"></i> AI Assistant
+            </a>
+            <a href="orders.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:text-brand-birutua hover:bg-brand-cream/50 rounded-xl font-medium transition-all">
+                <i class="fa-regular fa-clipboard w-5 text-center"></i> Orders
+            </a>
+            <a href="profile.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:text-brand-birutua hover:bg-brand-cream/50 rounded-xl font-medium transition-all">
+                <i class="fa-regular fa-user w-5 text-center"></i> Profile
+            </a>
+        </nav>
+        <div class="p-6 border-t border-gray-50">
+            <a href="login.html" class="flex items-center gap-4 px-4 py-3 text-red-500 hover:bg-red-50 rounded-xl font-medium transition-all">
+                <i class="fa-solid fa-arrow-right-from-bracket w-5 text-center"></i> Logout
+            </a>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col h-full relative overflow-hidden bg-brand-cream/40">
+        
+        <div class="bg-brand-birutua pt-6 pb-6 px-6 md:px-10 lg:px-14 shrink-0 shadow-lg relative z-20">
+            <div class="max-w-5xl mb-4 mx-auto w-full flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <a href="dashboard.html" class="text-brand-cream text-xl hover:text-brand-coklat transition-colors">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    <h1 class="text-xl md:text-2xl font-serif font-bold text-brand-cream tracking-wide">Artisan Export</h1>
+                </div>
+                <button class="relative bg-white/10 text-brand-cream font-bold px-4 py-2 rounded-xl text-xs md:text-sm hover:bg-white/20 transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-plane-departure"></i> <span class="hidden md:inline">New Shipment</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="flex-1 w-full px-6 md:px-10 lg:px-14 py-6 z-0 overflow-y-auto pb-28 custom-scrollbar relative">
+            <div class="max-w-5xl mx-auto w-full">
+
+                <div id="skeleton-loader" class="w-full flex flex-col gap-6 md:gap-8">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 animate-pulse">
+                        <div class="bg-white h-24 rounded-2xl shadow-sm"></div>
+                        <div class="bg-white h-24 rounded-2xl shadow-sm"></div>
+                        <div class="bg-white h-24 rounded-2xl shadow-sm"></div>
+                        <div class="bg-white h-24 rounded-2xl shadow-sm"></div>
+                    </div>
+                    <div class="w-full h-64 bg-white rounded-3xl animate-pulse shadow-sm"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 animate-pulse">
+                        <div class="bg-white h-48 rounded-2xl shadow-sm"></div>
+                        <div class="bg-white h-48 rounded-2xl shadow-sm"></div>
+                    </div>
+                </div>
+
+                <div id="actual-content" class="hidden opacity-0 transition-opacity duration-500 flex-col gap-6 md:gap-8">
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-5">
+                        <div class="bg-white p-4 md:p-5 rounded-2xl shadow-sm border border-gray-50 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-ship text-sm"></i>
+                                </div>
+                                <span class="text-brand-gray text-xs font-bold">Active Exports</span>
+                            </div>
+                            <span class="text-brand-birutua text-xl md:text-2xl font-bold truncate">3 <span class="text-xs text-brand-gray font-medium">shipments</span></span>
+                        </div>
+                        
+                        <div class="bg-white p-4 md:p-5 rounded-2xl shadow-sm border border-gray-50 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-earth-americas text-sm"></i>
+                                </div>
+                                <span class="text-brand-gray text-xs font-bold">Countries Reached</span>
+                            </div>
+                            <span class="text-brand-birutua text-xl md:text-2xl font-bold">12 <span class="text-xs text-brand-gray font-medium">nations</span></span>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-2xl shadow-sm border border-gray-50 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-brand-coklat/10 text-brand-coklat flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-file-invoice text-sm"></i>
+                                </div>
+                                <span class="text-brand-gray text-xs font-bold">Export Revenue</span>
+                            </div>
+                            <span class="text-brand-birutua text-lg md:text-xl font-bold">Rp 85M</span>
+                            <span class="text-[0.65rem] text-green-600 font-bold mt-1 flex items-center gap-1"><i class="fa-solid fa-arrow-trend-up"></i> +15% YoY</span>
+                        </div>
+
+                        <div class="bg-brand-birutua p-4 md:p-5 rounded-2xl shadow-sm border border-brand-birutua flex flex-col justify-center relative overflow-hidden group hover:bg-brand-coklat transition-colors cursor-pointer">
+                            <i class="fa-solid fa-file-shield absolute -right-2 -bottom-2 text-5xl text-white/10 rotate-12 pointer-events-none group-hover:scale-110 transition-transform"></i>
+                            <span class="text-brand-cream/80 text-xs font-bold mb-2">AI Compliance Check</span>
+                            <span class="text-white text-xl md:text-2xl font-bold leading-tight">100% Ready</span>
+                            <span class="text-[0.65rem] text-brand-coklatmuda font-bold mt-1">All docs verified</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-4">
+                        <div class="flex justify-between items-end px-1">
+                            <div>
+                                <h3 class="font-bold text-lg text-brand-birutua">Active International Shipments</h3>
+                                <p class="text-xs text-brand-gray font-medium">Live tracking and AI-managed export administration.</p>
+                            </div>
+                            <button class="text-brand-coklat text-sm font-semibold hover:underline">View History</button>
+                        </div>
+                        
+                        <div class="bg-white rounded-3xl p-5 md:p-6 shadow-sm border border-gray-50 flex flex-col gap-6">
+                            
+                            <div class="flex flex-col gap-4 border border-gray-100 rounded-2xl p-4 md:p-5 hover:shadow-md transition-shadow">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-gray-100 pb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-xl">🇩🇪</div>
+                                        <div>
+                                            <h4 class="font-bold text-sm md:text-base text-brand-birutua">Berlin, Germany</h4>
+                                            <span class="text-[0.65rem] md:text-xs text-brand-gray font-bold">Order #EX-8842 • 50x Premium Rattan Bag</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="px-3 py-1 bg-brand-cream text-brand-coklat text-[0.7rem] font-bold rounded-full border border-brand-coklat/20">In Transit</span>
+                                        <button class="text-brand-birutua hover:text-brand-coklat text-sm"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </div>
+                                
+                                <div class="relative w-full flex justify-between items-center px-2 mt-2">
+                                    <div class="absolute top-1/2 left-0 w-full h-1 bg-gray-200 -translate-y-1/2 rounded-full z-0"></div>
+                                    <div class="absolute top-1/2 left-0 w-2/3 h-1 bg-brand-birutua -translate-y-1/2 rounded-full z-0"></div>
+                                    
+                                    <div class="flex flex-col items-center gap-2 z-10">
+                                        <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-brand-birutua text-brand-cream flex items-center justify-center text-[0.6rem] md:text-xs border-2 border-white shadow-sm"><i class="fa-solid fa-box"></i></div>
+                                        <span class="text-[0.6rem] font-bold text-brand-birutua hidden md:block">Packed</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2 z-10">
+                                        <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-brand-birutua text-brand-cream flex items-center justify-center text-[0.6rem] md:text-xs border-2 border-white shadow-sm"><i class="fa-solid fa-file-circle-check"></i></div>
+                                        <span class="text-[0.6rem] font-bold text-brand-birutua hidden md:block">Customs Cleared</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2 z-10">
+                                        <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-brand-birutua text-brand-cream flex items-center justify-center text-[0.6rem] md:text-xs border-2 border-white shadow-sm animate-bounce"><i class="fa-solid fa-plane"></i></div>
+                                        <span class="text-[0.6rem] font-bold text-brand-birutua hidden md:block">In Transit</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2 z-10">
+                                        <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center text-[0.6rem] md:text-xs border-2 border-white shadow-sm"><i class="fa-solid fa-house-chimney"></i></div>
+                                        <span class="text-[0.6rem] font-bold text-brand-gray hidden md:block">Delivered</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-2 p-3 bg-brand-cream/30 border border-brand-cream rounded-xl flex items-start gap-3">
+                                    <i class="fa-solid fa-robot text-brand-coklat mt-0.5"></i>
+                                    <div class="flex-1 flex justify-between items-center">
+                                        <div>
+                                            <h4 class="text-xs font-bold text-brand-birutua">AI Document Assistant</h4>
+                                            <p class="text-[0.65rem] text-brand-gray mt-0.5">Commercial Invoice, Packing List, and Certificate of Origin (COO) automatically generated and verified.</p>
+                                        </div>
+                                        <button class="bg-white border border-gray-200 text-brand-birutua px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm hover:border-brand-coklat hover:text-brand-coklat transition-colors shrink-0">View Docs</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-4 border border-gray-100 rounded-2xl p-4 md:p-5 hover:shadow-md transition-shadow">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-gray-100 pb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-xl">🇯🇵</div>
+                                        <div>
+                                            <h4 class="font-bold text-sm md:text-base text-brand-birutua">Tokyo, Japan</h4>
+                                            <span class="text-[0.65rem] md:text-xs text-brand-gray font-bold">Order #EX-8843 • 20x Jepara Carved Box</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="px-3 py-1 bg-orange-100 text-orange-700 text-[0.7rem] font-bold rounded-full border border-orange-200">Customs Clearance</span>
+                                        <button class="text-brand-birutua hover:text-brand-coklat text-sm"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </div>
+                                
+                                <div class="relative w-full flex justify-between items-center px-2 mt-2">
+                                    <div class="absolute top-1/2 left-0 w-full h-1 bg-gray-200 -translate-y-1/2 rounded-full z-0"></div>
+                                    <div class="absolute top-1/2 left-0 w-1/3 h-1 bg-brand-birutua -translate-y-1/2 rounded-full z-0"></div>
+                                    
+                                    <div class="flex flex-col items-center gap-2 z-10">
+                                        <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-brand-birutua text-brand-cream flex items-center justify-center text-[0.6rem] md:text-xs border-2 border-white shadow-sm"><i class="fa-solid fa-box"></i></div>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2 z-10">
+                                        <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-brand-birutua text-brand-cream flex items-center justify-center text-[0.6rem] md:text-xs border-2 border-white shadow-sm animate-pulse"><i class="fa-solid fa-file-circle-check"></i></div>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2 z-10">
+                                        <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center text-[0.6rem] md:text-xs border-2 border-white shadow-sm"><i class="fa-solid fa-plane"></i></div>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2 z-10">
+                                        <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center text-[0.6rem] md:text-xs border-2 border-white shadow-sm"><i class="fa-solid fa-house-chimney"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-4 mb-4 mt-2">
+                        <div class="flex justify-between items-end px-1">
+                            <div>
+                                <h3 class="font-bold text-lg text-brand-birutua">Global Market Opportunities</h3>
+                                <p class="text-xs text-brand-gray font-medium">AI-predicted markets with high demand for your crafts.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            
+                            <div class="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-gray-50 flex flex-col gap-4 hover:shadow-md hover:border-brand-coklat transition-all cursor-pointer">
+                                <div class="flex justify-between items-start">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center shrink-0 text-2xl">🇦🇺</div>
+                                        <div>
+                                            <h4 class="font-bold text-sm md:text-base text-brand-birutua leading-tight">Australia</h4>
+                                            <span class="text-[0.65rem] md:text-xs text-brand-gray">High Demand for: Home Decor & Rattan</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end">
+                                        <span class="bg-green-100 text-green-700 px-2 py-1 rounded-lg text-[0.6rem] md:text-[0.65rem] font-bold">92% Match</span>
+                                    </div>
+                                </div>
+                                <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
+                                    <p class="text-[0.65rem] md:text-xs text-brand-gray leading-relaxed">
+                                        <span class="font-bold text-brand-birutua">AI Insight:</span> Lower shipping costs due to proximity. Favorable Free Trade Agreement (IA-CEPA) allows zero tariffs for your product category.
+                                    </p>
+                                </div>
+                                <button class="w-full bg-brand-birutua text-brand-cream py-2.5 rounded-xl text-xs font-bold shadow-sm hover:bg-brand-coklat transition-colors">
+                                    Analyze Market Entry
+                                </button>
+                            </div>
+
+                            <div class="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-gray-50 flex flex-col gap-4 hover:shadow-md hover:border-brand-coklat transition-all cursor-pointer">
+                                <div class="flex justify-between items-start">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center shrink-0 text-2xl">🇺🇸</div>
+                                        <div>
+                                            <h4 class="font-bold text-sm md:text-base text-brand-birutua leading-tight">United States</h4>
+                                            <span class="text-[0.65rem] md:text-xs text-brand-gray">High Demand for: Sustainable Fashion & Bags</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end">
+                                        <span class="bg-green-100 text-green-700 px-2 py-1 rounded-lg text-[0.6rem] md:text-[0.65rem] font-bold">85% Match</span>
+                                    </div>
+                                </div>
+                                <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
+                                    <p class="text-[0.65rem] md:text-xs text-brand-gray leading-relaxed">
+                                        <span class="font-bold text-brand-birutua">AI Insight:</span> Huge buyer base for eco-friendly artisan crafts. CRAFTLY system fully supports FDA and US Customs documentation automation.
+                                    </p>
+                                </div>
+                                <button class="w-full bg-white border-2 border-brand-birutua text-brand-birutua py-2.5 rounded-xl text-xs font-bold shadow-sm hover:bg-brand-birutua hover:text-brand-cream transition-colors">
+                                    Analyze Market Entry
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white h-[4.5rem] shadow-[0_-10px_20px_rgba(0,0,0,0.05)] rounded-t-3xl flex justify-between items-center px-6 z-50">
+        <a href="dashboard.html" class="flex flex-col items-center gap-1 text-brand-birutua w-12">
+            <i class="fa-solid fa-house text-lg"></i>
+            <span class="text-[0.65rem] font-bold">Home</span>
+        </a>
+        <a href="market.html" class="flex flex-col items-center gap-1 text-brand-gray hover:text-brand-birutua transition-colors w-12">
+            <i class="fa-solid fa-shop text-lg"></i>
+            <span class="text-[0.65rem] font-medium">Market</span>
+        </a>
+        <div class="relative w-16 flex justify-center">
+            <a href="ai-assistant.html" class="absolute -top-10 w-14 h-14 bg-brand-birutua rounded-full flex items-center justify-center text-brand-cream shadow-[0_8px_20px_rgba(29,48,72,0.4)] border-4 border-[#f8f9fa] transform transition-transform active:scale-95">
+                <i class="fa-solid fa-robot text-xl"></i>
+            </a>
+            <span class="absolute -bottom-6 text-[0.65rem] font-medium text-brand-gray">AI</span>
+        </div>
+        <a href="orders.html" class="flex flex-col items-center gap-1 text-brand-gray hover:text-brand-birutua transition-colors w-12">
+            <i class="fa-regular fa-clipboard text-lg"></i>
+            <span class="text-[0.65rem] font-medium">Orders</span>
+        </a>
+        <a href="profile.html" class="flex flex-col items-center gap-1 text-brand-gray hover:text-brand-birutua transition-colors w-12">
+            <i class="fa-regular fa-user text-lg"></i>
+            <span class="text-[0.65rem] font-medium">Profile</span>
+        </a>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 z-[100] flex hidden opacity-0 transition-opacity duration-300 md:hidden">
+        <div class="absolute inset-0 bg-brand-birutua/40 backdrop-blur-sm" id="mobile-overlay"></div>
+        <div class="bg-white w-72 h-full relative z-10 shadow-2xl transform -translate-x-full transition-transform duration-300 flex flex-col" id="mobile-drawer">
+            <div class="p-6 flex justify-between items-center border-b border-gray-50">
+                <img src="assets/img/Logo.png" alt="Craftly" class="h-10 object-contain">
+                <button id="close-mobile-menu" class="text-brand-gray hover:text-brand-coklat w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 transition-colors"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <nav class="flex-1 px-4 py-6 flex flex-col gap-2 overflow-y-auto custom-scrollbar">
+                <a href="dashboard.html" class="flex items-center gap-4 px-4 py-3 bg-brand-birutua text-brand-cream rounded-xl font-semibold shadow-md"><i class="fa-solid fa-house w-5 text-center"></i> Home</a>
+                <a href="market.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:bg-brand-cream/50 rounded-xl font-medium transition-colors"><i class="fa-solid fa-shop w-5 text-center"></i> Market</a>
+                <a href="ai-assistant.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:bg-brand-cream/50 rounded-xl font-medium transition-colors"><i class="fa-solid fa-robot w-5 text-center"></i> AI Assistant</a>
+                <a href="orders.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:bg-brand-cream/50 rounded-xl font-medium transition-colors"><i class="fa-regular fa-clipboard w-5 text-center"></i> Orders</a>
+                <a href="profile.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:bg-brand-cream/50 rounded-xl font-medium transition-colors"><i class="fa-regular fa-user w-5 text-center"></i> Profile</a>
+            </nav>
+            <div class="p-6 border-t border-gray-50">
+                <a href="login.html" class="flex items-center gap-4 px-4 py-3 text-red-500 hover:bg-red-50 rounded-xl font-medium transition-all"><i class="fa-solid fa-arrow-right-from-bracket w-5 text-center"></i> Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

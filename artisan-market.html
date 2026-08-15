@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Market | CRAFTLY</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+</head>
+<body class="bg-[#f8f9fa] font-sans antialiased text-brand-birutua overflow-hidden flex h-screen selection:bg-brand-coklat selection:text-white">
+
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r border-gray-100 h-full shadow-[4px_0_24px_rgba(0,0,0,0.02)] z-20 shrink-0">
+        <div class="p-6 flex items-center justify-center border-b border-gray-50">
+            <a href="dashboard.html" class="block transform transition-transform hover:scale-105">
+                <img src="assets/img/Logo.png" alt="Craftly" class="h-24 object-contain">
+            </a>
+        </div>
+        <nav class="flex-1 px-6 py-8 flex flex-col gap-2 overflow-y-auto custom-scrollbar">
+            <a href="dashboard.html" class="flex items-center gap-4 px-4 py-3 bg-brand-birutua text-brand-cream rounded-xl font-semibold shadow-md transition-all">
+                <i class="fa-solid fa-house w-5 text-center"></i> Home
+            </a>
+            <a href="market.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:text-brand-birutua hover:bg-brand-cream/50 rounded-xl font-medium transition-all">
+                <i class="fa-solid fa-shop w-5 text-center"></i> Market
+            </a>
+            <a href="ai-assistant.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:text-brand-birutua hover:bg-brand-cream/50 rounded-xl font-medium transition-all">
+                <i class="fa-solid fa-robot w-5 text-center"></i> AI Assistant
+            </a>
+            <a href="orders.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:text-brand-birutua hover:bg-brand-cream/50 rounded-xl font-medium transition-all">
+                <i class="fa-solid fa-clipboard w-5 text-center"></i> Orders
+            </a>
+            <a href="profile.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:text-brand-birutua hover:bg-brand-cream/50 rounded-xl font-medium transition-all">
+                <i class="fa-regular fa-user w-5 text-center"></i> Profile
+            </a>
+        </nav>
+        <div class="p-6 border-t border-gray-50">
+            <a href="login.html" class="flex items-center gap-4 px-4 py-3 text-red-500 hover:bg-red-50 rounded-xl font-medium transition-all">
+                <i class="fa-solid fa-arrow-right-from-bracket w-5 text-center"></i> Logout
+            </a>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col h-full relative overflow-hidden bg-brand-cream/40">
+        
+        <div class="bg-brand-birutua pt-6 pb-6 px-6 md:px-10 lg:px-14 shrink-0 shadow-lg relative z-20">
+            <div class="max-w-5xl mx-auto w-full flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <a href="dashboard.html" class="text-brand-cream text-xl hover:text-brand-coklat transition-colors">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    <h1 class="text-xl md:text-2xl font-serif font-bold text-brand-cream tracking-wide">Artisan Market</h1>
+                </div>
+                <button class="relative bg-brand-coklat text-brand-cream font-bold px-4 py-2 rounded-xl text-xs md:text-sm hover:bg-opacity-90 shadow-md transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-plus"></i> <span class="hidden md:inline">Add Craft</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="flex-1 w-full px-6 md:px-10 lg:px-14 py-6 z-0 overflow-y-auto pb-28 custom-scrollbar relative">
+            <div class="max-w-5xl mx-auto w-full">
+
+                <div id="skeleton-loader" class="w-full flex flex-col gap-6 md:gap-8">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 animate-pulse">
+                        <div class="bg-white h-24 rounded-2xl shadow-sm"></div>
+                        <div class="bg-white h-24 rounded-2xl shadow-sm"></div>
+                        <div class="bg-white h-24 rounded-2xl shadow-sm"></div>
+                        <div class="bg-white h-24 rounded-2xl shadow-sm"></div>
+                    </div>
+                    <div class="w-full h-12 bg-white rounded-full animate-pulse shadow-sm"></div>
+                    <div class="flex flex-col gap-4">
+                        <div class="w-full h-32 bg-white rounded-2xl animate-pulse shadow-sm"></div>
+                        <div class="w-full h-32 bg-white rounded-2xl animate-pulse shadow-sm"></div>
+                    </div>
+                </div>
+
+                <div id="actual-content" class="hidden opacity-0 transition-opacity duration-500 flex-col gap-6 md:gap-8">
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 mb-5 gap-4">
+                        <div class="bg-white p-4 md:p-5 rounded-2xl shadow-sm border border-gray-50 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-store text-sm"></i>
+                                </div>
+                                <span class="text-brand-gray text-xs font-bold">Active Listings</span>
+                            </div>
+                            <span class="text-brand-birutua text-xl md:text-2xl font-bold">24 <span class="text-xs text-brand-gray font-medium">items</span></span>
+                        </div>
+                        
+                        <div class="bg-white p-4 md:p-5 rounded-2xl shadow-sm border border-gray-50 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-eye text-sm"></i>
+                                </div>
+                                <span class="text-brand-gray text-xs font-bold">Store Views</span>
+                            </div>
+                            <span class="text-brand-birutua text-xl md:text-2xl font-bold">8,450</span>
+                            <span class="text-[0.65rem] text-green-600 font-bold mt-1 flex items-center gap-1"><i class="fa-solid fa-arrow-trend-up"></i> +24% this week</span>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-2xl shadow-sm border border-gray-50 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-bag-shopping text-sm"></i>
+                                </div>
+                                <span class="text-brand-gray text-xs font-bold">Conversion Rate</span>
+                            </div>
+                            <span class="text-brand-birutua text-xl md:text-2xl font-bold">4.2%</span>
+                            <span class="text-[0.65rem] text-brand-gray font-bold mt-1">Above market average</span>
+                        </div>
+
+                        <div class="bg-brand-birutua p-4 md:p-5 rounded-2xl shadow-sm border border-brand-birutua flex flex-col justify-center relative overflow-hidden group hover:bg-brand-coklat transition-colors cursor-pointer">
+                            <i class="fa-solid fa-bullhorn absolute -right-2 -bottom-2 text-5xl text-white/10 rotate-12 pointer-events-none group-hover:scale-110 transition-transform"></i>
+                            <span class="text-brand-cream/80 text-xs font-bold mb-2">AI Campaign Idea</span>
+                            <span class="text-white text-sm md:text-base font-bold leading-tight">Run a Bundle Promo</span>
+                            <span class="text-[0.65rem] text-brand-coklatmuda font-bold mt-1">For Rattan Series</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-full p-1.5 shadow-sm mb-5 border border-gray-100 flex overflow-x-auto custom-scrollbar sticky top-0 z-10">
+                        <button class="flex-1 px-4 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all whitespace-nowrap bg-brand-birutua text-brand-cream shadow-sm">Active</button>
+                        <button class="flex-1 px-4 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all whitespace-nowrap text-brand-gray hover:text-brand-birutua">Drafts (2)</button>
+                        <button class="flex-1 px-4 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all whitespace-nowrap text-brand-gray hover:text-brand-birutua">Sold Out (1)</button>
+                        <button class="flex-1 px-4 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all whitespace-nowrap text-brand-gray hover:text-brand-birutua">Archived</button>
+                    </div>
+
+                    <div class="flex flex-col gap-4">
+                        
+                        <div class="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-gray-50 flex flex-col md:flex-row gap-4 md:gap-6 hover:shadow-md transition-shadow">
+                            <div class="flex items-start gap-4 w-full md:w-auto">
+                                <img src="https://images.unsplash.com/photo-1616422285623-14bf916544a4?q=80&w=200&auto=format&fit=crop" class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover shrink-0 border border-gray-100">
+                                <div class="flex flex-col">
+                                    <h3 class="font-bold text-sm md:text-base text-brand-birutua leading-tight mb-1">Premium Rattan Bag</h3>
+                                    <span class="text-[0.65rem] md:text-xs text-brand-gray font-bold mb-2">Category: Bags & Accessories</span>
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-bold text-brand-birutua text-sm">Rp 185.000</span>
+                                        <span class="text-xs text-brand-gray">• Stock: 25</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden md:block w-px bg-gray-100 h-20 self-center"></div>
+                            <div class="flex flex-col justify-between w-full md:w-auto md:flex-1 gap-4">
+                                <div class="bg-green-50 border border-green-100 rounded-xl p-3 flex items-start gap-3">
+                                    <i class="fa-solid fa-robot text-green-600 mt-0.5"></i>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-green-700">AI Insight: High Demand</h4>
+                                        <p class="text-[0.65rem] text-green-600 mt-0.5">Your price is highly competitive. Consider increasing stock by 50 units for the upcoming holiday season.</p>
+                                    </div>
+                                </div>
+                                <div class="flex justify-end gap-2">
+                                    <button class="w-8 h-8 rounded-lg bg-gray-50 text-brand-gray hover:text-brand-birutua hover:bg-gray-200 transition-colors flex items-center justify-center"><i class="fa-solid fa-chart-line text-xs"></i></button>
+                                    <button class="w-8 h-8 rounded-lg bg-gray-50 text-brand-gray hover:text-brand-birutua hover:bg-gray-200 transition-colors flex items-center justify-center"><i class="fa-solid fa-pen text-xs"></i></button>
+                                    <button class="px-4 py-1.5 rounded-lg bg-brand-birutua text-brand-cream text-xs font-bold hover:bg-brand-coklat transition-colors shadow-sm">Boost Listing</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-gray-50 flex flex-col md:flex-row gap-4 md:gap-6 hover:shadow-md transition-shadow">
+                            <div class="flex items-start gap-4 w-full md:w-auto">
+                                <img src="https://images.unsplash.com/photo-1623512258933-7279fb04daab?q=80&w=200&auto=format&fit=crop" class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover shrink-0 border border-gray-100">
+                                <div class="flex flex-col">
+                                    <h3 class="font-bold text-sm md:text-base text-brand-birutua leading-tight mb-1">Bamboo Storage Basket</h3>
+                                    <span class="text-[0.65rem] md:text-xs text-brand-gray font-bold mb-2">Category: Home Decor</span>
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-bold text-brand-birutua text-sm">Rp 120.000</span>
+                                        <span class="text-xs text-brand-gray">• Stock: 40</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden md:block w-px bg-gray-100 h-20 self-center"></div>
+                            <div class="flex flex-col justify-between w-full md:w-auto md:flex-1 gap-4">
+                                <div class="bg-red-50 border border-red-100 rounded-xl p-3 flex items-start gap-3">
+                                    <i class="fa-solid fa-robot text-red-500 mt-0.5"></i>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-red-700">AI Insight: Price Adjust</h4>
+                                        <p class="text-[0.65rem] text-red-600 mt-0.5">Price is 20% below market average. AI suggests raising it to Rp 140.000 to maximize profit margin.</p>
+                                    </div>
+                                </div>
+                                <div class="flex justify-end gap-2">
+                                    <button class="w-8 h-8 rounded-lg bg-gray-50 text-brand-gray hover:text-brand-birutua hover:bg-gray-200 transition-colors flex items-center justify-center"><i class="fa-solid fa-chart-line text-xs"></i></button>
+                                    <button class="w-8 h-8 rounded-lg bg-gray-50 text-brand-gray hover:text-brand-birutua hover:bg-gray-200 transition-colors flex items-center justify-center"><i class="fa-solid fa-pen text-xs"></i></button>
+                                    <button class="px-4 py-1.5 rounded-lg bg-white border border-brand-birutua text-brand-birutua text-xs font-bold hover:bg-brand-birutua hover:text-brand-cream transition-colors shadow-sm">Apply Price</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-gray-50 flex flex-col md:flex-row gap-4 md:gap-6 hover:shadow-md transition-shadow opacity-75">
+                            <div class="flex items-start gap-4 w-full md:w-auto">
+                                <div class="w-20 h-20 md:w-24 md:h-24 relative rounded-xl overflow-hidden shrink-0 border border-gray-100">
+                                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover grayscale">
+                                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                        <span class="text-white text-[0.6rem] font-bold px-2 py-1 border border-white rounded">SOLD OUT</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <h3 class="font-bold text-sm md:text-base text-brand-birutua leading-tight mb-1">Woven Bamboo Lampshade</h3>
+                                    <span class="text-[0.65rem] md:text-xs text-brand-gray font-bold mb-2">Category: Lighting</span>
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-bold text-brand-birutua text-sm">Rp 210.000</span>
+                                        <span class="text-xs text-red-500 font-bold">• Stock: 0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden md:block w-px bg-gray-100 h-20 self-center"></div>
+                            <div class="flex flex-col justify-between w-full md:w-auto md:flex-1 gap-4">
+                                <div class="bg-orange-50 border border-orange-100 rounded-xl p-3 flex items-start gap-3">
+                                    <i class="fa-solid fa-robot text-orange-500 mt-0.5"></i>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-orange-700">AI Insight: Lost Sales</h4>
+                                        <p class="text-[0.65rem] text-orange-600 mt-0.5">You are losing potential buyers. Sync with Artisan Resource to restock raw materials immediately.</p>
+                                    </div>
+                                </div>
+                                <div class="flex justify-end gap-2">
+                                    <button class="w-8 h-8 rounded-lg bg-gray-50 text-brand-gray hover:text-brand-birutua hover:bg-gray-200 transition-colors flex items-center justify-center"><i class="fa-solid fa-chart-line text-xs"></i></button>
+                                    <button class="w-8 h-8 rounded-lg bg-gray-50 text-brand-gray hover:text-brand-birutua hover:bg-gray-200 transition-colors flex items-center justify-center"><i class="fa-solid fa-pen text-xs"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white h-[4.5rem] shadow-[0_-10px_20px_rgba(0,0,0,0.05)] rounded-t-3xl flex justify-between items-center px-6 z-50">
+        <a href="dashboard.html" class="flex flex-col items-center gap-1 text-brand-birutua w-12">
+            <i class="fa-solid fa-house text-lg"></i>
+            <span class="text-[0.65rem] font-bold">Home</span>
+        </a>
+        <a href="market.html" class="flex flex-col items-center gap-1 text-brand-gray hover:text-brand-birutua transition-colors w-12">
+            <i class="fa-solid fa-shop text-lg"></i>
+            <span class="text-[0.65rem] font-medium">Market</span>
+        </a>
+        <div class="relative w-16 flex justify-center">
+            <a href="ai-assistant.html" class="absolute -top-10 w-14 h-14 bg-brand-birutua rounded-full flex items-center justify-center text-brand-cream shadow-[0_8px_20px_rgba(29,48,72,0.4)] border-4 border-[#f8f9fa] transform transition-transform active:scale-95">
+                <i class="fa-solid fa-robot text-xl"></i>
+            </a>
+            <span class="absolute -bottom-6 text-[0.65rem] font-medium text-brand-gray">AI</span>
+        </div>
+        <a href="orders.html" class="flex flex-col items-center gap-1 text-brand-gray hover:text-brand-birutua transition-colors w-12">
+            <i class="fa-regular fa-clipboard text-lg"></i>
+            <span class="text-[0.65rem] font-medium">Orders</span>
+        </a>
+        <a href="profile.html" class="flex flex-col items-center gap-1 text-brand-gray hover:text-brand-birutua transition-colors w-12">
+            <i class="fa-regular fa-user text-lg"></i>
+            <span class="text-[0.65rem] font-medium">Profile</span>
+        </a>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 z-[100] flex hidden opacity-0 transition-opacity duration-300 md:hidden">
+        <div class="absolute inset-0 bg-brand-birutua/40 backdrop-blur-sm" id="mobile-overlay"></div>
+        <div class="bg-white w-72 h-full relative z-10 shadow-2xl transform -translate-x-full transition-transform duration-300 flex flex-col" id="mobile-drawer">
+            <div class="p-6 flex justify-between items-center border-b border-gray-50">
+                <img src="assets/img/Logo.png" alt="Craftly" class="h-10 object-contain">
+                <button id="close-mobile-menu" class="text-brand-gray hover:text-brand-coklat w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 transition-colors"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <nav class="flex-1 px-4 py-6 flex flex-col gap-2 overflow-y-auto custom-scrollbar">
+                <a href="dashboard.html" class="flex items-center gap-4 px-4 py-3 bg-brand-birutua text-brand-cream rounded-xl font-semibold shadow-md"><i class="fa-solid fa-house w-5 text-center"></i> Home</a>
+                <a href="market.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:bg-brand-cream/50 rounded-xl font-medium transition-colors"><i class="fa-solid fa-shop w-5 text-center"></i> Market</a>
+                <a href="ai-assistant.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:bg-brand-cream/50 rounded-xl font-medium transition-colors"><i class="fa-solid fa-robot w-5 text-center"></i> AI Assistant</a>
+                <a href="orders.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:bg-brand-cream/50 rounded-xl font-medium transition-colors"><i class="fa-regular fa-clipboard w-5 text-center"></i> Orders</a>
+                <a href="profile.html" class="flex items-center gap-4 px-4 py-3 text-brand-gray hover:bg-brand-cream/50 rounded-xl font-medium transition-colors"><i class="fa-regular fa-user w-5 text-center"></i> Profile</a>
+            </nav>
+            <div class="p-6 border-t border-gray-50">
+                <a href="login.html" class="flex items-center gap-4 px-4 py-3 text-red-500 hover:bg-red-50 rounded-xl font-medium transition-all"><i class="fa-solid fa-arrow-right-from-bracket w-5 text-center"></i> Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
