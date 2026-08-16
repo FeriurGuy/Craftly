@@ -7,7 +7,7 @@ An Artificial Intelligence-Based Platform to Empower Local Artisans and Micro-En
 https://img.shields.io/badge/1.-Artisan_Data-1D3048?style=for-the-badge" alt="Artisan Data">
 A digital record feature that stores personal and business data of Indonesian artisans, including their craft specialization, production capacity, and family background[cite: 7]. This data enables the AI to deliver curated information tailored to the artisan's needs and allows local governments to monitor and support them effectively[cite: 7].
 
-https://img.shields.io/badge/2.-Artisan_Resource-059669?style=for-the-badge" alt="Artisan Resource">
+"https://img.shields.io/badge/2.-Artisan_Resource-059669?style=for-the-badge" alt="Artisan Resource">
 An AI-powered system providing real-time information on raw material availability, sourcing recommendations, and production planning[cite: 7]. The platform projects material requirements based on order volumes and seasonal trends, ensuring production capacity aligns perfectly with market demands[cite: 7].
 
 https://img.shields.io/badge/3.-Artisan_Info-CA955E?style=for-the-badge" alt="Artisan Info">
