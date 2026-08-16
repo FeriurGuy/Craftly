@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
             item.addEventListener('click', () => {
                 const name = item.getAttribute('data-name');
                 const price = item.getAttribute('data-price');
-                const img = item.getAttribute('data-img');
+                const img = item.querySelector('img').src; 
 
                 if (modalImg && modalName && modalPrice) {
                     modalImg.src = img;
@@ -361,6 +361,50 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         });
+    }
+
+    // PORTFOLIO MODAL LOGIC
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const portfolioModal = document.getElementById('portfolio-modal');
+    const portfolioOverlay = document.getElementById('portfolio-overlay');
+    const portfolioCard = document.getElementById('portfolio-card');
+    const closePortfolioBtn = document.getElementById('close-portfolio');
+    
+    const pModalImg = document.getElementById('portfolio-modal-img');
+    const pModalTitle = document.getElementById('portfolio-modal-title');
+    const pModalDesc = document.getElementById('portfolio-modal-desc');
+
+    if (portfolioItems.length > 0 && portfolioModal) {
+        const closePortfolioModal = () => {
+            portfolioModal.classList.add('opacity-0');
+            portfolioCard.classList.add('scale-95');
+            setTimeout(() => {
+                portfolioModal.classList.add('hidden');
+            }, 300);
+        };
+
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.getAttribute('data-img');
+                const title = item.getAttribute('data-title');
+                const desc = item.getAttribute('data-desc');
+
+                if (pModalImg && pModalTitle && pModalDesc) {
+                    pModalImg.src = img;
+                    pModalTitle.textContent = title;
+                    pModalDesc.textContent = desc;
+                }
+
+                portfolioModal.classList.remove('hidden');
+                setTimeout(() => {
+                    portfolioModal.classList.remove('opacity-0');
+                    portfolioCard.classList.remove('scale-95');
+                }, 10);
+            });
+        });
+
+        if (closePortfolioBtn) closePortfolioBtn.addEventListener('click', closePortfolioModal);
+        if (portfolioOverlay) portfolioOverlay.addEventListener('click', closePortfolioModal);
     }
 
 });
