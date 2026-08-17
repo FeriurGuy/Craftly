@@ -22,7 +22,7 @@ body {
     min-height: 520px;
 }
 
-.container h1 { color: #1d3048; font-weight: 700; }
+.container h1 { color: #1d3048; font-weight: 700; margin-bottom: 15px; }
 .container p { font-size: 14px; line-height: 20px; letter-spacing: 0.3px; margin: 20px 0; color: #f4ede3; }
 .container span { font-size: 12px; color: #85898f; margin-bottom: 10px; }
 .container a { color: #c0603a; font-size: 13px; text-decoration: none; margin: 15px 0 10px; font-weight: 500; }
@@ -92,14 +92,22 @@ input:focus { border: 1px solid #c0603a; background-color: #fff; }
 }
 .btn-ghost:hover { background: #f4ede3; color: #1d3048; }
 
-.social-icons { margin: 20px 0; }
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+    width: 100%;
+}
+
 .icon-btn {
     border: 1px solid #e5e7eb;
     border-radius: 12px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin: 0 5px;
     width: 45px;
     height: 45px;
     background: white;
@@ -165,15 +173,10 @@ input:focus { border: 1px solid #c0603a; background-color: #fff; }
     object-fit: contain;
 }
 
-.logo-left {
-    left: 35px;
-}
+.logo-left { left: 35px; }
+.logo-right { right: 35px; }
 
-.logo-right {
-    right: 35px;
-}
-
-.toggle h1 { color: #fff; }
+.toggle h1 { color: #fff; margin-bottom: 0; }
 
 .container.active .toggle { transform: translateX(50%); }
 
@@ -197,6 +200,71 @@ input:focus { border: 1px solid #c0603a; background-color: #fff; }
 .toggle-right { right: 0; transform: translateX(0); }
 .container.active .toggle-right { transform: translateX(200%); }
 
+.panel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-15px);
+}
+
+.gov-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    color: #c0603a;
+    opacity: 0.9;
+}
+
+.gov-logo-container i {
+    font-size: 26px;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+}
+
+.gov-logo-container span {
+    font-size: 12px;
+    color: #1d3048;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.2px;
+}
+
+.security-badge {
+    width: 100%;
+    background-color: #fcfaf6;
+    border: 1px solid rgba(202, 149, 94, 0.4);
+    border-radius: 16px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 40px;
+    box-shadow: 0 4px 15px rgba(29, 48, 72, 0.15);
+}
+
+.badge-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #c0603a, #ca955e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 5px rgba(192, 96, 58, 0.3);
+}
+
+.badge-icon i { color: #fff; font-size: 14px; }
+
+p.badge-text {
+    font-size: 10.5px;
+    color: #1d3048;
+    margin: 0;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1.4;
+}
+
 @media (max-width: 768px) {
     .logo-small { display: none; }
     .container { width: 100%; min-height: 100vh; border-radius: 0; box-shadow: none; }
@@ -212,4 +280,7 @@ input:focus { border: 1px solid #c0603a; background-color: #fff; }
     .container.active .toggle-right { opacity: 0; pointer-events: none; }
     .toggle-left { opacity: 0; pointer-events: none; }
     .container.active .toggle-left { opacity: 1; pointer-events: auto; }
+    .panel-content { transform: translateY(0); }
+    .security-badge { margin-top: 20px; padding: 12px; }
+    .gov-logo-container { margin-top: 60px; }
 }

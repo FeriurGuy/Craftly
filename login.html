@@ -15,14 +15,15 @@
     <link rel="stylesheet" href="assets/css/auth.css">
 </head>
 <body>
-
     <div class="container" id="container">
         
         <div class="form-container sign-up">
             <form id="registerForm">
                 <h1>Join CRAFTLY</h1>
                 <div class="social-icons">
-                    <button type="button" class="icon-btn" id="googleRegister"><i class="fa-brands fa-google"></i></button>
+                    <button type="button" class="icon-btn" id="googleLogin"><i class="fa-brands fa-google"></i></button>
+                    <button type="button" class="icon-btn" id="facebookLogin"><i class="fa-brands fa-facebook-f"></i></button>
+                    <button type="button" class="icon-btn" id="twitterLogin"><i class="fa-brands fa-twitter"></i></button>
                 </div>
                 <span>or use your email for registration</span>
                 
@@ -31,6 +32,11 @@
                 <input type="password" id="password" placeholder="Password">
                 
                 <button type="submit" class="btn-primary">Sign Up</button>
+
+                <div class="gov-logo-container">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>Pemerintah Republik Indonesia</span>
+                </div>
             </form>
         </div>
 
@@ -39,6 +45,8 @@
                 <h1>Welcome Back!</h1>
                 <div class="social-icons">
                     <button type="button" class="icon-btn" id="googleLogin"><i class="fa-brands fa-google"></i></button>
+                    <button type="button" class="icon-btn" id="facebookLogin"><i class="fa-brands fa-facebook-f"></i></button>
+                    <button type="button" class="icon-btn" id="twitterLogin"><i class="fa-brands fa-twitter"></i></button>
                 </div>
                 <span>or use your email account</span>
                 
@@ -47,6 +55,11 @@
                 
                 <a href="#" class="forgot-pass">Forgot Password?</a>
                 <button type="submit" class="btn-primary">Sign In</button>
+
+                <div class="gov-logo-container">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>Pemerintah Republik Indonesia</span>
+                </div>
             </form>
         </div>
 
@@ -54,21 +67,38 @@
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
                     <img src="assets/img/logo-kiri.png" alt="Craftly Logo" class="logo-small logo-left">
-                    <h1>Welcome Back!</h1>
-                    <p>Enter your personal details to access your craft business dashboard.</p>
-                    <button class="btn-ghost" id="loginBtnTrigger">Sign In</button>
+                    <div class="panel-content">
+                        <h1>Welcome Back!</h1>
+                        <p>Enter your personal details to access your craft business dashboard.</p>
+                        <button class="btn-ghost" id="loginBtnTrigger">Sign In</button>
+                        
+                        <div class="security-badge">
+                            <div class="badge-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <p class="badge-text">Your data is safe and verified together with Local Government Cooperative Offices.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="toggle-panel toggle-right">
                     <img src="assets/img/logo-kanan.png" alt="Craftly Logo" class="logo-small logo-right">
-                    <h1>New Here?</h1>
-                    <p>Sign up and discover a world of opportunities for your local craft.</p>
-                    <button class="btn-ghost" id="registerBtnTrigger">Sign Up</button>
+                    <div class="panel-content">
+                        <h1>New Here?</h1>
+                        <p>Sign up and discover a world of opportunities for your local craft.</p>
+                        <button class="btn-ghost" id="registerBtnTrigger">Sign Up</button>
+                        
+                        <div class="security-badge">
+                            <div class="badge-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <p class="badge-text">Your data is safe and verified together with Local Government Cooperative Offices.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="assets/js/auth.js"></script>
-
 </body>
 </html>
